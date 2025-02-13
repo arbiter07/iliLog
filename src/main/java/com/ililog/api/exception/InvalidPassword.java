@@ -1,6 +1,6 @@
-package com.hodolog.api.exception;
+package com.ililog.api.exception;
 
-public class InvalidPassword extends HodologException {
+public class InvalidPassword extends IlilogException {
 
     private static final String MESSAGE = "비밀번호가 올바르지 않습니다.";
 

@@ -1,8 +1,7 @@
-package com.hodolog.api.config;
+package com.ililog.api.config;
 
-import com.hodolog.api.config.data.UserSession;
-import com.hodolog.api.exception.Unauthorized;
-import com.hodolog.api.repository.SessionRepository;
+import com.ililog.api.config.data.UserSession;
+import com.ililog.api.exception.Unauthorized;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jws;
 import io.jsonwebtoken.JwtException;
@@ -15,11 +14,11 @@ import org.springframework.web.context.request.NativeWebRequest;
 import org.springframework.web.method.support.HandlerMethodArgumentResolver;
 import org.springframework.web.method.support.ModelAndViewContainer;
 
+// Security로 변경함
 @Slf4j
 @RequiredArgsConstructor
 public class AuthResolver implements HandlerMethodArgumentResolver {
 
-    private final SessionRepository sessionRepository;
     private final AppConfig appConfig;
 
     @Override
@@ -29,7 +28,7 @@ public class AuthResolver implements HandlerMethodArgumentResolver {
 
     @Override
     public Object resolveArgument(MethodParameter parameter, ModelAndViewContainer mavContainer, NativeWebRequest webRequest, WebDataBinderFactory binderFactory) {
-        log.info(">>>{}", appConfig.toString());
+       log.info(">>>{}", appConfig.toString());
 
         String jws = webRequest.getHeader("Authorization");
         if (jws == null || jws.equals("")) {

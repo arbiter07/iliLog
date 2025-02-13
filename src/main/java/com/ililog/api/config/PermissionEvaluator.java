@@ -1,17 +1,16 @@
-package com.hodolog.api.config;
+package com.ililog.api.config;
 
-import com.hodolog.api.exception.PostNotFound;
-import com.hodolog.api.repository.post.PostRepository;
+import com.ililog.api.exception.PostNotFound;
+import com.ililog.api.repository.PostRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.security.access.PermissionEvaluator;
 import org.springframework.security.core.Authentication;
 
 import java.io.Serializable;
 
 @Slf4j
 @RequiredArgsConstructor
-public class HodologPermissionEvaluator implements PermissionEvaluator {
+public class PermissionEvaluator implements org.springframework.security.access.PermissionEvaluator {
 
     private final PostRepository postRepository;
 

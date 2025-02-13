@@ -1,6 +1,6 @@
-package com.hodolog.api.repository;
+package com.ililog.api.repository;
 
-import com.hodolog.api.domain.Post;
+import com.ililog.api.domain.Post;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface PostRepository extends JpaRepository<Post, Long>, PostRepositoryCustom {

@@ -1,4 +1,4 @@
-package com.hodolog.api.config.filter;
+package com.ililog.api.config.filter;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import jakarta.servlet.ServletException;

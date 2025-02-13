@@ -1,4 +1,4 @@
-package com.hodolog.api.exception;
+package com.ililog.api.exception;
 
 import lombok.Getter;
 
@@ -6,15 +6,15 @@ import java.util.HashMap;
 import java.util.Map;
 
 @Getter
-public abstract class HodologException extends RuntimeException {
+public abstract class IlilogException extends RuntimeException {
 
     public final Map<String, String> validation = new HashMap<>();
 
-    public HodologException(String message) {
+    public IlilogException(String message) {
         super(message);
     }
 
-    public HodologException(String message, Throwable cause) {
+    public IlilogException(String message, Throwable cause) {
         super(message, cause);
     }
 

@@ -1,14 +1,14 @@
-package com.hodolog.api.controller;
+package com.ililog.api.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.hodolog.api.domain.Comment;
-import com.hodolog.api.domain.Post;
-import com.hodolog.api.domain.User;
-import com.hodolog.api.repository.UserRepository;
-import com.hodolog.api.repository.comment.CommentRepository;
-import com.hodolog.api.repository.post.PostRepository;
-import com.hodolog.api.request.comment.CommentCreate;
-import com.hodolog.api.request.comment.CommentDelete;
+import com.ililog.api.domain.Comment;
+import com.ililog.api.domain.Post;
+import com.ililog.api.domain.User;
+import com.ililog.api.repository.UserRepository;
+import com.ililog.api.repository.CommentRepository;
+import com.ililog.api.repository.PostRepository;
+import com.ililog.api.request.CommentCreate;
+import com.ililog.api.request.CommentDelete;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -58,8 +58,8 @@ class CommentControllerTest {
     void test1() throws Exception {
         // given
         User user = User.builder()
-                .name("호돌맨")
-                .email("hodolman88@gmail.com")
+                .name("ili")
+                .email("abcd2222@gmail.com")
                 .password("1234")
                 .build();
         userRepository.save(user);
@@ -72,7 +72,7 @@ class CommentControllerTest {
         postRepository.save(post);
 
         CommentCreate request = CommentCreate.builder()
-                .author("호순이")
+                .author("ili2")
                 .password("123456")
                 .content("댓글입니다. 아아아아아 10글자 제한")
                 .build();
@@ -88,7 +88,7 @@ class CommentControllerTest {
         assertEquals(1L, commentRepository.count());
 
         Comment savedComment = commentRepository.findAll().get(0);
-        assertEquals("호순이", savedComment.getAuthor());
+        assertEquals("ili2", savedComment.getAuthor());
         assertNotEquals("123456", savedComment.getPassword());
         assertTrue(passwordEncoder.matches("123456", savedComment.getPassword()));
         assertEquals("댓글입니다. 아아아아아 10글자 제한", savedComment.getContent());
@@ -99,8 +99,8 @@ class CommentControllerTest {
     void test2() throws Exception {
         // given
         User user = User.builder()
-                .name("호돌맨")
-                .email("hodolman88@gmail.com")
+                .name("ili")
+                .email("abcd2222@gmail.com")
                 .password("1234")
                 .build();
         userRepository.save(user);
@@ -114,9 +114,9 @@ class CommentControllerTest {
 
         String encryptedPassword = passwordEncoder.encode("123456");
         Comment comment = Comment.builder()
-                .author("호돌순")
+                .author("ili2")
                 .password(encryptedPassword)
-                .content("으하하하하하하하하 10글자 제한 빡치네")
+                .content("으하하하하하하하하 10글자")
                 .build();
         comment.setPost(post);
         commentRepository.save(comment);

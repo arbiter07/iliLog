@@ -1,4 +1,4 @@
-package com.hodolog.api.config.data;
+package com.ililog.api.config.data;
 
 public class UserSession {
 

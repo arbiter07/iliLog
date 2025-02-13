@@ -3,8 +3,9 @@ package com.ililog.api.crypto;
 import org.springframework.security.crypto.scrypt.SCryptPasswordEncoder;
 import org.springframework.stereotype.Component;
 
-@Component
-public class PasswordEncoder {
+// @Component
+// Security로 변경함
+public class ScryptPasswordEncoder implements PasswordEncoder {
 
     private static final SCryptPasswordEncoder encoder = new SCryptPasswordEncoder(
             16,
@@ -13,10 +14,12 @@ public class PasswordEncoder {
             32,
             64);
 
-    public String encrpyt(String rawPassword) {
+    @Override
+    public String encode(String rawPassword) {
         return encoder.encode(rawPassword);
     }
 
+    @Override
     public boolean matches(String rawPassword, String encrpytedPassword) {
         return encoder.matches(rawPassword, encrpytedPassword);
     }

@@ -18,9 +18,9 @@ import static jakarta.persistence.GenerationType.IDENTITY;
 //#####################
 // jwt 방식으로 바꾸면서 세션 사용안함
 //#####################
-@Getter
+
 //@Entity
-// Security로 변경함
+@Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class Session {
 

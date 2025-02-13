@@ -1,14 +1,14 @@
-package com.hodolog.api.service;
+package com.ililog.api.service;
 
-import com.hodolog.api.domain.Comment;
-import com.hodolog.api.domain.Post;
-import com.hodolog.api.exception.CommentNotFound;
-import com.hodolog.api.exception.InvalidPassword;
-import com.hodolog.api.exception.PostNotFound;
-import com.hodolog.api.repository.comment.CommentRepository;
-import com.hodolog.api.repository.post.PostRepository;
-import com.hodolog.api.request.comment.CommentCreate;
-import com.hodolog.api.request.comment.CommentDelete;
+import com.ililog.api.domain.Comment;
+import com.ililog.api.domain.Post;
+import com.ililog.api.exception.CommentNotFound;
+import com.ililog.api.exception.InvalidPassword;
+import com.ililog.api.exception.PostNotFound;
+import com.ililog.api.repository.CommentRepository;
+import com.ililog.api.repository.PostRepository;
+import com.ililog.api.request.CommentCreate;
+import com.ililog.api.request.CommentDelete;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;

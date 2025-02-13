@@ -1,4 +1,4 @@
-package com.hodolog.api.request;
+package com.ililog.api.request;
 
 import lombok.Builder;
 import lombok.Data;

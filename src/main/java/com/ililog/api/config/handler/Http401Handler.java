@@ -1,7 +1,7 @@
-package com.hodolog.api.config.handler;
+package com.ililog.api.config.handler;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.hodolog.api.response.ErrorResponse;
+import com.ililog.api.response.ErrorResponse;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;

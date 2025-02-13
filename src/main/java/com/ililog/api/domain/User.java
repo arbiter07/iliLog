@@ -1,13 +1,12 @@
-package com.hodolog.api.domain;
+package com.ililog.api.domain;
 
+import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.*;
 import java.time.LocalDateTime;
-import java.util.ArrayList;
 import java.util.List;
 
 @Getter
@@ -21,14 +20,14 @@ public class User {
 
     private String name;
 
-    private String email;
+    private String email; // 아이디
 
     private String password;
 
     private LocalDateTime createdAt;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
-    private List<Session> sessions = new ArrayList<>();
+    private List<Post> posts;
 
     @Builder
     public User(String name, String email, String password) {
@@ -36,15 +35,6 @@ public class User {
         this.email = email;
         this.password = password;
         this.createdAt = LocalDateTime.now();
-    }
-
-    public Session addSession() {
-        Session session = Session.builder()
-                .user(this)
-                .build();
-        sessions.add(session);
-
-        return session;
     }
 
 }

@@ -1,9 +1,9 @@
-package com.hodolog.api.exception;
+package com.ililog.api.exception;
 
 /**
  * status -> 404
  */
-public class PostNotFound extends HodologException {
+public class PostNotFound extends IlilogException {
 
     private static final String MESSAGE = "존재하지 않는 글입니다.";
 

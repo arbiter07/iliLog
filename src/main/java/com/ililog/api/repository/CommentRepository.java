@@ -1,6 +1,6 @@
-package com.hodolog.api.repository.comment;
+package com.ililog.api.repository;
 
-import com.hodolog.api.domain.Comment;
+import com.ililog.api.domain.Comment;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface CommentRepository extends JpaRepository<Comment, Long> {

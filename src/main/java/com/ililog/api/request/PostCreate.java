@@ -1,12 +1,12 @@
-package com.hodolog.api.request;
+package com.ililog.api.request;
 
-import com.hodolog.api.exception.InvalidRequest;
+import com.ililog.api.exception.InvalidRequest;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
-import javax.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotBlank;
 
 @Setter
 @Getter
@@ -25,9 +25,4 @@ public class PostCreate {
         this.content = content;
     }
 
-    public void validate() {
-        if (title.contains("바보")) {
-            throw new InvalidRequest("title", "제목에 바보를 포함할 수 없습니다.");
-        }
-    }
 }

@@ -1,4 +1,4 @@
-package com.hodolog.api.exception;
+package com.ililog.api.exception;
 
 import lombok.Getter;
 
@@ -6,7 +6,7 @@ import lombok.Getter;
  * status -> 400
  */
 @Getter
-public class InvalidRequest extends HodologException {
+public class InvalidRequest extends IlilogException {
 
     private static final String MESSAGE = "잘못된 요청입니다.";
 

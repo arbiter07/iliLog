@@ -1,4 +1,4 @@
-package com.hodolog.api.response;
+package com.ililog.api.response;
 
 import lombok.Getter;
 

@@ -1,7 +1,7 @@
-package com.hodolog.api.config;
+package com.ililog.api.config;
 
-import com.hodolog.api.domain.User;
-import com.hodolog.api.repository.UserRepository;
+import com.ililog.api.domain.User;
+import com.ililog.api.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -12,12 +12,12 @@ import org.springframework.security.test.context.support.WithSecurityContextFact
 import java.util.List;
 
 @RequiredArgsConstructor
-public class HodologMockSecurityContext implements WithSecurityContextFactory<HodologMockUser> {
+public class IliLogMockSecurityContext implements WithSecurityContextFactory<IliLogMockUser> {
 
     private final UserRepository userRepository;
 
     @Override
-    public SecurityContext createSecurityContext(HodologMockUser annotation) {
+    public SecurityContext createSecurityContext(IliLogMockUser annotation) {
         var user = User.builder()
                 .email(annotation.email())
                 .name(annotation.name())

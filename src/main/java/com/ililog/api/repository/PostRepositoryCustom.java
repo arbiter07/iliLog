@@ -1,7 +1,7 @@
-package com.hodolog.api.repository;
+package com.ililog.api.repository;
 
-import com.hodolog.api.domain.Post;
-import com.hodolog.api.request.PostSearch;
+import com.ililog.api.domain.Post;
+import com.ililog.api.request.PostSearch;
 
 import java.util.List;
 

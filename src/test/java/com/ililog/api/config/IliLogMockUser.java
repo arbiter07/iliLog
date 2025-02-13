@@ -1,4 +1,4 @@
-package com.hodolog.api.config;
+package com.ililog.api.config;
 
 import org.springframework.security.test.context.support.WithSecurityContext;
 
@@ -6,12 +6,12 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 
 @Retention(RetentionPolicy.RUNTIME)
-@WithSecurityContext(factory = HodologMockSecurityContext.class)
-public @interface HodologMockUser {
+@WithSecurityContext(factory = IliLogMockSecurityContext.class)
+public @interface IliLogMockUser {
 
-    String name() default "호돌맨";
+    String name() default "ILI";
 
-    String email() default "hodolman88@gmail.com";
+    String email() default "abcd22@gmail.com";
 
     String password() default "";
 

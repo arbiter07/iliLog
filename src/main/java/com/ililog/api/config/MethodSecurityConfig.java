@@ -1,6 +1,6 @@
-package com.hodolog.api.config;
+package com.ililog.api.config;
 
-import com.hodolog.api.repository.post.PostRepository;
+import com.ililog.api.repository.PostRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -18,7 +18,7 @@ public class MethodSecurityConfig {
     @Bean
     public MethodSecurityExpressionHandler methodSecurityExpressionHandler() {
         var handler = new DefaultMethodSecurityExpressionHandler();
-        handler.setPermissionEvaluator(new HodologPermissionEvaluator(postRepository));
+        handler.setPermissionEvaluator(new PermissionEvaluator(postRepository));
         return handler;
     }
 }

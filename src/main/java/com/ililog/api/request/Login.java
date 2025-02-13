@@ -1,12 +1,15 @@
-package com.hodolog.api.request;
+package com.ililog.api.request;
 
 import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
-import javax.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotBlank;
 
+//#####################
+// security 방식으로 바꾸면서 Login 중지
+//#####################
 @Getter
 @Setter
 @ToString

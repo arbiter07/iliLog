@@ -1,4 +1,4 @@
-package com.hodolog.api.domain;
+package com.ililog.api.domain;
 
 import lombok.Builder;
 import lombok.Getter;

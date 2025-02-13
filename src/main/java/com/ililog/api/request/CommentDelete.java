@@ -1,4 +1,4 @@
-package com.hodolog.api.request.comment;
+package com.ililog.api.request;
 
 import lombok.Getter;
 

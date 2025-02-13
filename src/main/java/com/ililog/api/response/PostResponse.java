@@ -1,6 +1,6 @@
-package com.hodolog.api.response;
+package com.ililog.api.response;
 
-import com.hodolog.api.domain.Post;
+import com.ililog.api.domain.Post;
 import lombok.Builder;
 import lombok.Getter;
 

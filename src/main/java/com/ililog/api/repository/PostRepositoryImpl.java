@@ -1,13 +1,13 @@
-package com.hodolog.api.repository;
+package com.ililog.api.repository;
 
-import com.hodolog.api.domain.Post;
-import com.hodolog.api.request.PostSearch;
+import com.ililog.api.domain.Post;
+import com.ililog.api.request.PostSearch;
 import com.querydsl.jpa.impl.JPAQueryFactory;
 import lombok.RequiredArgsConstructor;
 
 import java.util.List;
 
-import static com.hodolog.api.domain.QPost.post;
+import static com.ililog.api.domain.QPost.post;
 
 @RequiredArgsConstructor
 public class PostRepositoryImpl implements PostRepositoryCustom {

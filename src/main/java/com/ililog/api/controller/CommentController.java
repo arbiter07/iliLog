@@ -1,8 +1,8 @@
-package com.hodolog.api.controller;
+package com.ililog.api.controller;
 
-import com.hodolog.api.request.comment.CommentCreate;
-import com.hodolog.api.request.comment.CommentDelete;
-import com.hodolog.api.service.CommentService;
+import com.ililog.api.request.CommentCreate;
+import com.ililog.api.request.CommentDelete;
+import com.ililog.api.service.CommentService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

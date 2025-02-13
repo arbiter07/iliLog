@@ -1,13 +1,15 @@
-package com.hodolog.api.service;
+package com.ililog.api.service;
 
-import com.hodolog.api.domain.Post;
-import com.hodolog.api.domain.PostEditor;
-import com.hodolog.api.exception.PostNotFound;
-import com.hodolog.api.repository.PostRepository;
-import com.hodolog.api.request.PostCreate;
-import com.hodolog.api.request.PostEdit;
-import com.hodolog.api.request.PostSearch;
-import com.hodolog.api.response.PostResponse;
+import com.ililog.api.domain.Post;
+import com.ililog.api.domain.PostEditor;
+import com.ililog.api.exception.PostNotFound;
+import com.ililog.api.exception.UserNotFound;
+import com.ililog.api.repository.PostRepository;
+import com.ililog.api.repository.UserRepository;
+import com.ililog.api.request.PostCreate;
+import com.ililog.api.request.PostEdit;
+import com.ililog.api.request.PostSearch;
+import com.ililog.api.response.PostResponse;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -21,10 +23,15 @@ import java.util.stream.Collectors;
 @RequiredArgsConstructor
 public class PostService {
 
+    private final UserRepository userRepository;
     private final PostRepository postRepository;
 
-    public void write(PostCreate postCreate) {
+    public void write(Long userId, PostCreate postCreate) {
+        var user = userRepository.findById(userId)
+                .orElseThrow(UserNotFound::new);
+
         Post post = Post.builder()
+                .user(user)
                 .title(postCreate.getTitle())
                 .content(postCreate.getContent())
                 .build();
