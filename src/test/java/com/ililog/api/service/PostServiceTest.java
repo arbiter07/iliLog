@@ -50,8 +50,8 @@ class PostServiceTest {
 
         // given
         var user = User.builder()
-                .name("호돌맨")
-                .email("hodolman88@gmail.com")
+                .name("name1234")
+                .email("abcd22@gmail.com")
                 .password("1234")
                 .build();
         userRepository.save(user);

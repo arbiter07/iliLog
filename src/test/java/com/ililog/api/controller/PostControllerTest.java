@@ -199,8 +199,8 @@ class PostControllerTest {
         User user = userRepository.findAll().get(0);
 
         Post post = Post.builder()
-                .title("호돌맨")
-                .content("반포자이")
+                .title("제목")
+                .content("내용")
                 .user(user)
                 .build();
         postRepository.save(post);
