@@ -9,9 +9,11 @@ import com.ililog.api.repository.UserRepository;
 import com.ililog.api.request.PostCreate;
 import com.ililog.api.request.PostEdit;
 import com.ililog.api.request.PostSearch;
+import com.ililog.api.response.PagingResponse;
 import com.ililog.api.response.PostResponse;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -50,10 +52,10 @@ public class PostService {
                 .build();
     }
 
-    public List<PostResponse> getList(PostSearch postSearch) {
-        return postRepository.getList(postSearch).stream()
-                .map(PostResponse::new)
-                .collect(Collectors.toList());
+    public PagingResponse<PostResponse> getList(PostSearch postSearch) {
+        Page<Post> postPage = postRepository.getList(postSearch);
+        PagingResponse<PostResponse> postList = new PagingResponse<>(postPage, PostResponse.class);
+        return postList;
     }
 
     @Transactional

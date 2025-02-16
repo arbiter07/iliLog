@@ -4,6 +4,7 @@ import com.ililog.api.config.UserPrincipal;
 import com.ililog.api.request.PostCreate;
 import com.ililog.api.request.PostEdit;
 import com.ililog.api.request.PostSearch;
+import com.ililog.api.response.PagingResponse;
 import com.ililog.api.response.PostResponse;
 import com.ililog.api.service.PostService;
 import lombok.RequiredArgsConstructor;
@@ -35,10 +36,9 @@ public class PostController {
     }
 
     @GetMapping("/posts")
-    public List<PostResponse> getList(@ModelAttribute PostSearch postSearch) {
+    public PagingResponse<PostResponse> getList(@ModelAttribute PostSearch postSearch) {
         return postService.getList(postSearch);
     }
-
     @PreAuthorize("hasRole('ROLE_ADMIN')")
     @PatchMapping("/posts/{postId}")
     public void edit(@PathVariable Long postId, @RequestBody @Valid PostEdit request) {

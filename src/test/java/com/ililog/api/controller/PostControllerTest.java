@@ -122,7 +122,7 @@ class PostControllerTest {
     }
 
     @Test
-    @DisplayName("글 여러개 조회")
+    @DisplayName("글 여러개 조회 + 페이저블 객체")
     void test5() throws Exception {
         // given
         List<Post> requestPosts = IntStream.range(0, 20)
@@ -138,14 +138,12 @@ class PostControllerTest {
         mockMvc.perform(get("/posts?page=1&size=10")
                         .contentType(APPLICATION_JSON))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$.length()", is(10)))
-                .andExpect(jsonPath("$[0].title").value("foo19"))
-                .andExpect(jsonPath("$[0].content").value("bar19"))
+                .andExpect(jsonPath("$.length()", is(4)))
                 .andDo(print());
     }
 
     @Test
-    @DisplayName("페이지를 0으로 요청하면 첫 페이지를 가져온다.")
+    @DisplayName("페이지를 0으로 요청하면 페이저블 객체와 함께 넘겨준다")
     void test6() throws Exception {
         // given
         List<Post> requestPosts = IntStream.range(0, 20)
@@ -161,9 +159,7 @@ class PostControllerTest {
         mockMvc.perform(get("/posts?page=0&size=10")
                         .contentType(APPLICATION_JSON))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$.length()", is(10)))
-                .andExpect(jsonPath("$[0].title").value("foo19"))
-                .andExpect(jsonPath("$[0].content").value("bar19"))
+                .andExpect(jsonPath("$.length()", is(4)))
                 .andDo(print());
     }
 

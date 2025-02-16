@@ -12,6 +12,9 @@
     }
   ],
   "compilerOptions": {
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "noImplicitAny": false,
     "module": "NodeNext",
     "types": ["vue"]
   }

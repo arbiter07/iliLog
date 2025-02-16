@@ -8,6 +8,7 @@ import com.ililog.api.repository.UserRepository;
 import com.ililog.api.request.PostCreate;
 import com.ililog.api.request.PostEdit;
 import com.ililog.api.request.PostSearch;
+import com.ililog.api.response.PagingResponse;
 import com.ililog.api.response.PostResponse;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -103,11 +104,11 @@ class PostServiceTest {
                 .build();
 
         // when
-        List<PostResponse> posts = postService.getList(postSearch);
+        PagingResponse<PostResponse> postList = postService.getList(postSearch);
 
         // then
-        assertEquals(10L, posts.size());
-        assertEquals("foo19", posts.get(0).getTitle());
+        assertEquals(20L, postList.getTotalCount());
+        assertEquals("foo19", postList.getItems().get(0).getTitle());
     }
 
     @Test
