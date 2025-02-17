@@ -4,13 +4,13 @@
   <div class="comment">
     <div class="header">
       <div class="section">
-        <div class="author">밥돌이</div>
+        <div class="author">이리</div>
         <div class="regDate">2023-05-01 23:59:59</div>
       </div>
 
       <div class="delete">삭제</div>
     </div>
-    <div class="content">나 밥돌맨인데 개추했다.</div>
+    <div class="content">유용한 정보에요!</div>
   </div>
 </template>
 

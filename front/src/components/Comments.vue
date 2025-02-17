@@ -1,5 +1,11 @@
 <script setup lang="ts">
 import Comment from '@/components/Comment.vue'
+import { ref } from 'vue';
+
+const author = ref('')
+const pw = ref('')
+const content = ref('')
+
 </script>
 
 <template>
@@ -10,18 +16,18 @@ import Comment from '@/components/Comment.vue'
       <div class="section">
         <div>
           <label for="author">작성자</label>
-          <el-input id="author" placeholder="밥돌맨"></el-input>
+          <el-input v-model="author" id="author" placeholder="user1"></el-input>
         </div>
 
         <div>
           <label for="password">비밀번호</label>
-          <el-input type="password" id="password" placeholder="비밀번호"></el-input>
+          <el-input v-model="pw" type="password" id="password" placeholder="비밀번호"></el-input>
         </div>
       </div>
 
       <div class="content">
-        <label for="password">내용</label>
-        <el-input id="content" type="textarea" :rows="5" :autosize="{ minRows: 5, maxRows: 4 }"></el-input>
+        <label for="content">내용</label>
+        <el-input v-model="content" id="content" type="textarea" :rows="5" :autosize="{ minRows: 5, maxRows: 4 }"></el-input>
       </div>
     </div>
 
