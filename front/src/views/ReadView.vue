@@ -39,10 +39,13 @@ function remove() {
     confirmButtonText: '삭제',
     cancelButtonText: '취소',
     type: 'warning',
-  }).then(() => {
+  })
+  .then(() => {
     POST_REPOSITORY.delete(props.postId).then(() => {
       ElMessage({ type: 'success', message: '성공적으로 삭제되었습니다.' })
       router.back()
+    }).catch((e) => {
+      ElMessage({ type: 'error', message: e.message })
     })
   })
 }
